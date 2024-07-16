@@ -22,6 +22,7 @@ let project = Project(
                 .SPM.RxSwift,
                 .SPM.SnapKit,
                 .SPM.Then,
+                .SPM.Swinject
             ]
         )
     ]

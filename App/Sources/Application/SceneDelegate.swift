@@ -1,8 +1,11 @@
 import UIKit
+import RxFlow
+import Swinject
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var flowCoordinator = FlowCoordinator()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -11,9 +14,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         guard let window = self.window else { return }
-        
-        window.rootViewController = MainViewController()
-        window.makeKeyAndVisible()
+        let appFlow = AppFlow(presentable: window)
+
+        flowCoordinator.coordinate(
+            flow: appFlow,
+            with: OneStepper(withSingleStep: DalgonaStep.onBoardingIsRequired)
+        )
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

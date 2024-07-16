@@ -1,7 +1,14 @@
 import UIKit
+import Swinject
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    static var container: Container {
+        let injectContainer = Container()
+        injectContainer.appDepedencyInject()
+        return injectContainer
+    }
 
     // MARK: UISceneSession Lifecycle
 

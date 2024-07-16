@@ -1,6 +1,9 @@
 import UIKit
 
-extension UIColor {
+public extension UIColor {
+
+    // MARK: - background
+    static let background = DalgonaIOSAsset.background.color
 
     // MARK: - main
     static let main = DalgonaIOSAsset.main.color

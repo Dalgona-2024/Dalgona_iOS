@@ -14,7 +14,8 @@ import PackageDescription
             "Then": .framework,
             "KeychainSwift": .framework,
             "RxFlow": .framework,
-            "Kingfisher": .framework
+            "Kingfisher": .framework,
+            "Swinject": .framework
         ]
     )
 #endif
@@ -28,6 +29,7 @@ let package = Package(
         .package(url: "https://github.com/devxoul/Then.git", from: "3.0.0"),
         .package(url: "https://github.com/evgenyneu/keychain-swift.git", from: "20.0.0"),
         .package(url: "https://github.com/RxSwiftCommunity/RxFlow.git", from: "2.13.0"),
-        .package(url: "https://github.com/onevcat/Kingfisher.git", from: "7.4.1")
+        .package(url: "https://github.com/onevcat/Kingfisher.git", from: "7.4.1"),
+        .package(url: "https://github.com/Swinject/Swinject.git", from: "2.9.1")
     ]
 )
