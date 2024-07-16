@@ -7,4 +7,7 @@ enum DalgonaStep: Step {
     case onBoardingIsRequired
     case loginIsRequired
     case signupIsRequired
+    case mainIsRequired
+
+    case dalgonaColletionIsRequired
 }

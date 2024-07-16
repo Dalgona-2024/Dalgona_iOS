@@ -12,7 +12,7 @@ class SignUpViewController: BaseVC<SignUpViewModel> {
     }
     
     private let subTitleLabel = UILabel().then {
-        $0.text = "새로은 계정을 만들어요."
+        $0.text = "새로운 계정을 만들어요."
         $0.textColor = .gray600
         $0.font = .regular16
     }

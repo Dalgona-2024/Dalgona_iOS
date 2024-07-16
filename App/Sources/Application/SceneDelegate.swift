@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         flowCoordinator.coordinate(
             flow: appFlow,
-            with: OneStepper(withSingleStep: DalgonaStep.onBoardingIsRequired)
+            with: OneStepper(withSingleStep: DalgonaStep.mainIsRequired)
         )
     }
 

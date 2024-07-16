@@ -15,6 +15,8 @@ class AppFlow: Flow {
         switch step {
         case .onBoardingIsRequired:
             return setRootToAuthFlow()
+        case .mainIsRequired:
+            return setRootToMainFlow()
         default:
             return .none
         }
@@ -29,6 +31,18 @@ class AppFlow: Flow {
         return .one(flowContributor: .contribute(
             withNextPresentable: authFlow,
             withNextStepper: OneStepper(withSingleStep: DalgonaStep.onBoardingIsRequired)
+        ))
+    }
+
+    private func setRootToMainFlow() -> FlowContributors {
+        let mainFlow = MainFlow()
+        Flows.use(mainFlow, when: .ready) { [self] in
+            presentable.rootViewController = $0
+            presentable.makeKeyAndVisible()
+        }
+        return .one(flowContributor: .contribute(
+            withNextPresentable: mainFlow,
+            withNextStepper: OneStepper(withSingleStep: DalgonaStep.mainIsRequired)
         ))
     }
 }
