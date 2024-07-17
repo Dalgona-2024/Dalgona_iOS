@@ -80,11 +80,13 @@ class QuizComplitionViewController: BaseVC<QuizComplitionViewModel> {
     }
     
     override func addView() {
-        view.addSubview(mainLabel)
-        view.addSubview(subLabel)
-        view.addSubview(outButton)
-        view.addSubview(nextButton)
-        view.addSubview(dalgonaImageView)
+        view.addSubviews(
+            mainLabel,
+            subLabel,
+            outButton,
+            nextButton,
+            dalgonaImageView
+        )
     }
     
     override func setLayout() {
