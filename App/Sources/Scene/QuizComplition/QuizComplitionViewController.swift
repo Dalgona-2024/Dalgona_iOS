@@ -71,7 +71,10 @@ class QuizComplitionViewController: BaseVC<QuizComplitionViewModel> {
     
     private let dalgonaImageView = UIImageView()
     
-    private let outButton = DalgonaFillButton(title: "나가기")
+    private let outButton = DalgonaFillButton(title: "나가기").then {
+        $0.backgroundColor = .white
+        $0.setTitleColor(.black, for: .normal)
+    }
     
     private let nextButton = DalgonaFillButton(title: "2단계 풀러가기")
     

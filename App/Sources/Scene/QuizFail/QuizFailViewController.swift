@@ -45,9 +45,12 @@ class QuizFailViewController: BaseVC<QuizFailViewModel> {
         $0.textColor = .black
     }
     
-    private let outButton = DalgonaFillButton(title: "나가기")
+    private let outButton = DalgonaFillButton(title: "나가기").then{
+        $0.backgroundColor = .white
+        $0.setTitleColor(.black, for: .normal)
+    }
     private let retryButton = DalgonaFillButton(title: "다시 풀러가기")
-    
+
     private let dalgona = UIImageView().then{
         $0.image = DalgonaIOSAsset.dal.image
     }
